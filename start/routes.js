@@ -21,18 +21,18 @@ Route.on("/").render("welcome");
 Route.group(() => {
   Route.get("google", "AuthController.redirectGoogle")
     .as("login.google")
-    .middleware("notloggedin");
+    .middleware("guest");
   Route.get(
     "google/authenticated",
     "AuthController.authenticatedGoogle"
-  ).middleware("notloggedin");
+  ).middleware("guest");
   Route.get("facebook", "AuthController.redirectFacebook")
     .as("login.facebook")
-    .middleware("notloggedin");
+    .middleware("guest");
   Route.get(
     "facebook/authenticated",
     "AuthController.authenticatedFacebook"
-  ).middleware("notloggedin");
+  ).middleware("guest");
 }).prefix("login");
 
 Route.get("logout", "AuthController.logout");

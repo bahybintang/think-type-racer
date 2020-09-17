@@ -1,0 +1,31 @@
+version: "3.2"
+
+services:
+  think-type-racer-db:
+    image: mysql:5.7.22
+    container_name: think-type-racer-db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - think-type-racer-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_DATABASE}"
+
+  think-type-racer-redis:
+    image: bitnami/redis:6.0.8
+    container_name: think-type-racer-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - think-type-racer-redis-data:/bitnami/redis/data
+    environment:
+      REDIS_PASSWORD: "${REDIS_PASSWORD}"
+
+volumes:
+  think-type-racer-data:
+    driver: local
+  think-type-racer-redis-data:
+    driver: local

@@ -13,11 +13,13 @@
       <p>Test your typing skill and knowledge</p>
     </div>
     <div class="google-btn" style="max-width: 250px;">
-      <div class="google-icon-wrapper">
-        <img class="google-icon-svg"
-          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-      </div>
-      <p class="btn-text"><b>Continue with Google</b></p>
+      <a href="{{ route('login.google') }}">
+        <div class="google-icon-wrapper">
+          <img class="google-icon-svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+        </div>
+        <p class="btn-text"><b>Continue with Google</b></p>
+      </a>
     </div>
   </section>
 </body>
