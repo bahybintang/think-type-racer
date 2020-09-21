@@ -1,7 +1,8 @@
 "use strict";
+// const Redis = use("Redis");
 
 class RoomController {
-  constructor({ socket, request }) {
+  async constructor({ socket, request }) {
     this.socket = socket;
     this.request = request;
   }

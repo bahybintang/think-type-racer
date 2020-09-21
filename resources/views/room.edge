@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Think Type Racer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.min.js"></script>
+  <script src="https://unpkg.com/@adonisjs/websocket-client"></script>
   {{ style('style') }}
 </head>
 
@@ -14,9 +16,24 @@
     <div class="subtitle">
       <p>Play a game.</p>
   </section>
-
   <script>
+    let ws = null;
 
+    function start() {
+      ws = adonis.Ws().connect();
+      ws.on("open", () => {
+        enterRoom();
+      });
+      ws.on("close", () => {
+        alert("Connection closed");
+      });
+    }
+
+    function enterRoom() {
+      const room = ws.subscribe("room:{{ room_id }}");
+    }
+
+    start();
   </script>
 </body>
 

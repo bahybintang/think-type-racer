@@ -42,3 +42,6 @@ Route.get("pickusername", "AuthController.pickUsername")
 Route.post("pickusername", "AuthController.registerUsername")
   .as("pickusername.register")
   .middleware("gotoauthdetail");
+Route.get("room/:room_id", "RoomController.index")
+  .as("room")
+  .middleware("auth");
