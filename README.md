@@ -13,6 +13,11 @@ This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
 
 ## Setup
 
+To install adonis.
+```bash
+npm i -g @adonisjs/cli
+```
+
 Use the adonis command to install the blueprint
 
 ```bash
@@ -31,6 +36,7 @@ adonis migration:run
 ```
 
 ### Running App
+
 To run in development environment.
 ```js
 adonis serve --dev
