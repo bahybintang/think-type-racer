@@ -29,3 +29,9 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+### Running App
+To run in development environment.
+```js
+adonis serve --dev
+```
